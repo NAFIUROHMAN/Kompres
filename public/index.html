@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compression Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Kompres File</h1>
+
+        <!-- Kompres Gambar -->
+        <h2>Kompres Gambar</h2>
+        <input type="file" id="uploadImage" accept="image/*">
+        <canvas id="canvas" style="display: none;"></canvas>
+        <button id="compressButton" onclick="compressImage()">Kompres Gambar</button>
+        <a id="downloadImage" style="display:none;" download="compressed-image.jpg">Download Gambar</a>
+
+        <div id="resultImage">
+            <h3>Hasil Kompresi Gambar</h3>
+            <img id="compressedImage" src="#" alt="Hasil kompresi akan muncul di sini" style="display: none;">
+        </div>
+
+        <!-- Kompres PDF -->
+        <h2>Kompres PDF</h2>
+        <form id="pdfForm" action="/compress-pdf" method="POST" enctype="multipart/form-data">
+            <input type="file" id="uploadPDF" name="pdf" accept="application/pdf">
+            <button type="submit">Kompres PDF</button>
+            <a id="downloadPDF" style="display:none;" download="compressed-pdf.pdf">Download PDF</a>
+        </form>
+        
+        <div id="resultPDF"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
